@@ -1,6 +1,3 @@
-'use strict';
-
-
 /*
 list: {
   node0: { val: 'Apollo', next: 'Boomer' },
