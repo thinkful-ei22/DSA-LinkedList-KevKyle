@@ -32,7 +32,7 @@ function main(){
   
   // console.log(SLL.find('Kat'));
   // SLL.remove('squirrel');
-  SLL.remove('Tauhida');
+  // SLL.remove('Tauhida');
   // console.log(SLL.find('Tauhida'));
   
   // console.log(SLL);
@@ -45,8 +45,8 @@ function main(){
   // console.log(findPrevious(SLL, 'Helo'));
   // console.log(findLast(SLL));
 
-  display(reverseList(SLL));
-  console.log(thirdFromEnd(SLL));
-  // middleOfList();
+  // display(reverseList(SLL));
+  // console.log(thirdFromEnd(SLL));
+  console.log(middleOfList(SLL));
 }
 main();

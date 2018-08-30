@@ -1,5 +1,6 @@
 const LinkedList = require('./linked-list-class');
 const linkedList = new LinkedList();
+const {findLast} = require('./linked-list-helpers');
 
 //1,2,3,2
 function WhatDoesThisProgramDo(lst){
@@ -27,8 +28,8 @@ Then the current position moves up one to compare the next value and all the
 values after that to the end of the linked list and so on.
 */
 
-// A       B        C      D
-// 0       1        2      3
+// A       B        C      D     E    F 
+// 0       1        2      3     4    5
 
 // points 
 //Reverse a List
@@ -63,15 +64,20 @@ function thirdFromEnd(list){
 //run-time complexity - O(n). one while loop. scales with n numbers
 
 function middleOfList(list){
-  // if(!list.head){
-  //   return null;
-  // }
-  let currNode = list.head;
-  while(currNode){
-    currNode = currNode.next;
+  if(!list.head){
+    return null;
   }
-
+  let currNode = list.head;
+  while((currNode.next !== null) && (currNode.next.next !== null)){
+    
+    list.head = list.head.next;
+    list.remove(findLast(list).value);
+    // console.log(list.head, '123123213');
+    currNode = list.head;
+  }
+  return currNode;
 }
+//run-time complexity - O(n^2). it is using nested while loops.
 
 module.exports = {
   reverseList,
