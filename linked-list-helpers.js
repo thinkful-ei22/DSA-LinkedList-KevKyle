@@ -8,9 +8,6 @@ list: {
 }
 */
 
-
-
-
 const display = (list) => {
   const listDisplay = {};
   let currNode = list.head;
@@ -22,15 +19,26 @@ const display = (list) => {
     currNode = currNode.next;
     position++;
   }
-
-
   console.log(listDisplay);
   return listDisplay;
 };
 
-const size = () => {};
+const size = (list) => {
+  let listSize = 0;
+  if (!list.head) {
+    return listSize;
+  }
+  let currNode = list.head;
+  while(currNode) {
+    listSize++;
+    currNode = currNode.next;
+  }
+  return listSize;
+};
 
-const isEmpty = () => {};
+const isEmpty = (list) => {
+  return !list.head;
+};
 
 const findPrevious = () => {};
 

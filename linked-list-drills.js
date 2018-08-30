@@ -35,10 +35,10 @@ function main(){
   console.log(SLL);
   // HELPERS
   display(SLL);
-  size(SLL);
+  console.log(size(SLL));
   const emptySll = new LinkedList();
-  isEmpty(SLL);
-  isEmpty(emptySll);
+  console.log(isEmpty(emptySll));
+  console.log(isEmpty(SLL));
   findPrevious(SLL, 'Helo');
   findLast(SLL);
 }
