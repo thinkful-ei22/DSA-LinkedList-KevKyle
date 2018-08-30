@@ -66,7 +66,7 @@ class LinkedList {
     if(!this.head){
       return null;
     }
-    if(this.head === nodeFind){
+    if(this.head.value === nodeFind){
       this.insertFirst(newItem);
       return;
     }
@@ -97,23 +97,33 @@ class LinkedList {
     }
     currNode.next = new _Node(newItem, currNode.next);
   }
+
+  // Linked List : H E L O
+  //               0 1 2 3
+  //               
+  _findNthElement (position){
+    let node = this.head;
+    for(let i = 0; i < position; i++){
+      node = node.next;
+    }
+    return node;
+  } 
+
   insertAt(newItem, position){
+    // console.log('called');
     if(!this.head){
       return null;
     }
     if(position === 0){
+      // console.log('pos 0');
       this.insertFirst(newItem);
       return;
     }
-    let indexLL = 0;
-    let currNode = this.head;
-    while((currNode.next !== null) && (indexLL < (position-1))){
-      currNode = currNode.next;
-      indexLL++;
+    const node = this._findNthElement(position-1);
+    if(node){
+      node.next = new _Node(newItem, node.next);
+      // console.log(this.find('Kat'));
     }
-    // if(indexLL === position){
-
-    // }
   }
 }
 
