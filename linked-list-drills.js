@@ -31,15 +31,14 @@ function main(){
   SLL.remove('Tauhida');
   // console.log(SLL.find('Tauhida'));
   
-  
-  console.log(SLL);
+  // console.log(SLL);
   // HELPERS
   display(SLL);
-  console.log(size(SLL));
-  const emptySll = new LinkedList();
-  console.log(isEmpty(emptySll));
-  console.log(isEmpty(SLL));
-  findPrevious(SLL, 'Helo');
-  findLast(SLL);
+  // console.log(size(SLL));
+  // const emptySll = new LinkedList();
+  // console.log(isEmpty(emptySll));
+  // console.log(isEmpty(SLL));
+  // console.log(findPrevious(SLL, 'Helo'));
+  // console.log(findLast(SLL));
 }
 main();

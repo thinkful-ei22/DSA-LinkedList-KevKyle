@@ -40,9 +40,32 @@ const isEmpty = (list) => {
   return !list.head;
 };
 
-const findPrevious = () => {};
+const findPrevious = (list, item) => {
+  if (!list.head || list.head === item) {
+    return null;
+  }
+  let currNode = list.head;
+  while (currNode && currNode.next.value !== item) {
+    currNode = currNode.next;
+  }
+  if (!currNode) {
+    console.log('Item not found');
+    return;
+  }
 
-const findLast = () => {};
+  return currNode;
+};
+
+const findLast = (list) => {
+  if (!list.head) {
+    return null;
+  }
+  let currNode = list.head;
+  while (currNode.next) {
+    currNode = currNode.next;
+  }
+  return currNode;
+};
 
 module.exports = {
   display,
