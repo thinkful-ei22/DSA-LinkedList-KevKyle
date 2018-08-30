@@ -7,6 +7,12 @@ const {
   findLast
 } = require('./linked-list-helpers');
 
+const {
+  reverseList,
+  thirdFromEnd,
+  middleOfList
+} = require('./LL-interview');
+
 function main(){
   const SLL = new LinkedList();
   SLL.insertFirst('Apollo');//0
@@ -38,5 +44,9 @@ function main(){
   // console.log(isEmpty(SLL));
   // console.log(findPrevious(SLL, 'Helo'));
   // console.log(findLast(SLL));
+
+  display(reverseList(SLL));
+  console.log(thirdFromEnd(SLL));
+  // middleOfList();
 }
 main();
