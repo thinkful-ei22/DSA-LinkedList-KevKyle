@@ -1,6 +1,13 @@
+'use strict';
+
 const LinkedList = require('./linked-list-class');
-
-
+const {
+  display,
+  size,
+  isEmpty,
+  findPrevious,
+  findLast
+} = require('./linked-list-helpers');
 
 function main(){
   const SLL = new LinkedList();
@@ -14,17 +21,25 @@ function main(){
   SLL.insertLast('Tauhida');
   // console.log(SLL.find('Tauhida'));
   
-
   SLL.insertBefore('Athena', 'Boomer');
   // console.log(SLL);
   SLL.insertAfter('Hotdog', 'Helo');
   SLL.insertAt('Kat', 3);
-
+  
   // console.log(SLL.find('Kat'));
   // SLL.remove('squirrel');
   SLL.remove('Tauhida');
   // console.log(SLL.find('Tauhida'));
-
   
+  
+  console.log(SLL);
+  // HELPERS
+  display(SLL);
+  size(SLL);
+  const emptySll = new LinkedList();
+  isEmpty(SLL);
+  isEmpty(emptySll);
+  findPrevious(SLL, 'Helo');
+  findLast(SLL);
 }
 main();
