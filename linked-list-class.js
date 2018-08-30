@@ -54,6 +54,7 @@ class LinkedList {
     let prevNode = this.head;
     while ((currNode !== null) && (currNode.value !== item)){
       prevNode = currNode;
+      currNode = currNode.next;
     }
     if(currNode === null){
       console.log('Item not found');
@@ -61,5 +62,59 @@ class LinkedList {
     }
     prevNode.next = currNode.next;
   }
-  
+  insertBefore(newItem, nodeFind){
+    if(!this.head){
+      return null;
+    }
+    if(this.head === nodeFind){
+      this.insertFirst(newItem);
+      return;
+    }
+    let currNode = this.head;
+    while((currNode.next !== null) && (currNode.next.value !== nodeFind)){
+      currNode = currNode.next;
+    }
+    if(currNode.next === null){
+      console.log('Item not found');
+      return;
+    }
+    let newNode = new _Node(newItem, currNode.next);
+    //point the new node to the current node's next
+    currNode.next = newNode;
+    //point the current node to the new node
+  }
+  insertAfter(newItem, nodeFind){
+    if(!this.head){
+      return null;
+    }
+    let currNode = this.head;
+    while((currNode !== null) && (currNode.value !== nodeFind)){
+      currNode = currNode.next;
+    }
+    if(currNode === null){
+      console.log('Item not Found');
+      return;
+    }
+    currNode.next = new _Node(newItem, currNode.next);
+  }
+  insertAt(newItem, position){
+    if(!this.head){
+      return null;
+    }
+    if(position === 0){
+      this.insertFirst(newItem);
+      return;
+    }
+    let indexLL = 0;
+    let currNode = this.head;
+    while((currNode.next !== null) && (indexLL < (position-1))){
+      currNode = currNode.next;
+      indexLL++;
+    }
+    // if(indexLL === position){
+
+    // }
+  }
 }
+
+module.exports = LinkedList;
